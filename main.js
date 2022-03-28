@@ -35,7 +35,6 @@ function moveDiskToPole(startPole, endPole, diskStart, diskEnd) {
     let poleStartTopDisk = pop(startPole);
     let poleDestTopDisk = pop(endPole);
 
-
     if (poleStartTopDisk == 0) {
         push(startPole, poleDestTopDisk);
         move(diskEnd, diskStart, poleDestTopDisk);
