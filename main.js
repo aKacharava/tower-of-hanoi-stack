@@ -2,17 +2,17 @@ class Stack {
     ///Add a constructor to specify the size, the top(limit) and the array of a Stack
     constructor(size) {
         this.stackSize = size;
-        this.top = -1;
+        this.top = 0;
         this.stackArray = new Array(size);
     }
 }
 
 function isFull(stack) {
-    return (stack.top === (stack.stackSize - 1));
+    return (stack.top === (stack.stackSize));
 }
 
 function isEmpty(stack) {
-    return (stack.top === -1);
+    return (stack.top === 0);
 }
 
 function push(stack, item) {
@@ -35,6 +35,7 @@ function moveDiskToPole(startPole, endPole, diskStart, diskEnd) {
     let poleStartTopDisk = pop(startPole);
     let poleDestTopDisk = pop(endPole);
 
+
     if (poleStartTopDisk == 0) {
         push(startPole, poleDestTopDisk);
         move(diskEnd, diskStart, poleDestTopDisk);
@@ -53,8 +54,8 @@ function moveDiskToPole(startPole, endPole, diskStart, diskEnd) {
         push(endPole, poleStartTopDisk);
         move(diskStart, diskEnd, poleStartTopDisk);
     }
-    console.log("Start move pole: " + startPole.stackArray + "\n");
-    console.log("End move pole: " + endPole.stackArray + "\n");
+    //console.log("Start move pole: " + startPole.stackArray + "\n");
+    //console.log("End move pole: " + endPole.stackArray + "\n");
 }
 
 let amountMoves = 0;
@@ -87,9 +88,9 @@ function towerOfHanoi(diskAmount, startPole, inBetweenPole, endPole) {
         push(startPole, i);
     }
 
-    console.log("Start pole: " + startPole.stackArray + "\n");
-    console.log("Between pole: " + inBetweenPole.stackArray + "\n");
-    console.log("End pole: " + endPole.stackArray + "\n");
+    //console.log("Start pole: " + startPole.stackArray + "\n");
+    //console.log("Between pole: " + inBetweenPole.stackArray + "\n");
+    //console.log("End pole: " + endPole.stackArray + "\n");
     
     for (let i = 1; i <= totalMoves; i++) {
         if (i % amountPoles == 1) {
