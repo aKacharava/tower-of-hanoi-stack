@@ -7,8 +7,6 @@ class Stack {
   }
 }
 
-// testing git
-
 function isFull(stack) {
   return stack.top === stack.stackSize;
 }
